@@ -50,3 +50,20 @@ division and identifies the functions and data used in each computation.
 
 The repository contains the verification programs and data. The manuscript
 is distributed separately.
+
+## Citation
+
+If you use this code or these certificates in research that leads to a
+publication, please cite the accompanying paper:
+
+Tianle Liu. *The optimal four-dimensional lattice quantizer and bounds from
+Voronoi facets*. Preprint, 2026.
+
+Citation metadata is provided in [CITATION.cff](CITATION.cff). This citation
+request is not an additional condition of the MIT License.
+
+## License
+
+The verification code, certificates, and accompanying repository documentation
+are distributed under the [MIT License](LICENSE). The manuscript is distributed
+separately and is not covered by this license.

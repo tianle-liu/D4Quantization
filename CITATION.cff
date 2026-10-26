@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code or these certificates in published research, please cite the accompanying paper listed under preferred-citation."
+title: "D4 quantization: verification"
+authors:
+  - family-names: Liu
+    given-names: Tianle
+repository-code: "https://github.com/tianle-liu/D4Quantization"
+license: MIT
+preferred-citation:
+  type: unpublished
+  title: "The optimal four-dimensional lattice quantizer and bounds from Voronoi facets"
+  authors:
+    - family-names: Liu
+      given-names: Tianle
+  year: 2026
+  notes: "Preprint."
