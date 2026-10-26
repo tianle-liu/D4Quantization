@@ -1,0 +1,30 @@
+# TeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+main-extracted.txt
+source-reference-audit.json
+__pycache__/
+*.pyc
+.DS_Store
+
+# Working notes and superseded certificates
+review/
+d4-certificate/audit_c1_sos.py
+d4-certificate/audit_c23_sos.py
+d4-certificate/c1-sos.json
+d4-certificate/c2-sos.json
+d4-certificate/c3-sos.json
+d4-certificate/*-independent-audit.json
+d4-certificate/rebuilt_*.json
+
+# Local manuscript files
+*.tex
+*.bib
+*.pdf
+audit_source_references.py
