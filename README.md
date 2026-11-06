@@ -1,69 +1,62 @@
-# D4 quantization: verification
+# Optimality of the D4 lattice quantizer
 
-Programs and polynomial identities for the proof that D4 is the optimal
-four-dimensional lattice quantizer. The repository also includes checks
-for the circular-cone derivative identity and an eight-dimensional
-consequence of the Voronoi-facet bound.
+Lean 4 formalization of [arXiv:2611.00100v2](https://arxiv.org/abs/2611.00100v2).
 
-## Reading and running the checks
+The main statements concern actual Euclidean Voronoi cells and their Lebesgue
+second moments. The four-dimensional theorem includes the characterization of
+equality by similarities of D4. The dimension-dependent lower bound applies to
+arbitrary discrete full-rank lattices in dimension at least two.
 
-The [review guide](REVIEWING.md) connects the mathematical statements to the
-programs and works through one coefficient of a polynomial identity.
-Start with that example, then run the full verification:
+The project also formalizes the classification of the three secondary domains,
+their closed cones and moment formulas, the polynomial inequalities, and the
+auxiliary geometric and graph-theoretic statements. The outside integrals at
+both cone boundaries are jointly analytic in the tangential and transverse
+parameters. The quantization applications in this version are included;
+historical claims and descriptions of external applications are outside the
+mathematical scope.
 
-```sh
-python3 -B inspect_certificate.py
-python3 -B verify_d4_global.py
-python3 -B verify_cone_bound.py
-```
+The proofs use mathlib and Lean's standard foundational axioms: propositional
+extensionality, classical choice, and quotient soundness. No additional
+mathematical axioms or admitted proofs are used. Finite certificates are checked
+by the ordinary Lean kernel.
 
-Python 3.9 or later and its standard library are sufficient. Run from this
-directory with assertions enabled: do not use `-O` or `-OO`. The D4 program
-reconstructs the geometry and moments in a temporary directory.
+## Build
 
-The D4 verification has five stages: geometric reconstruction, comparison
-with the supplied moment polynomials, six polynomial identities, a second
-integration by boundary triangulation, and the final scalar inequalities
-and identification of D4. Its last line is
-`ALL D4 GLOBAL PROOF CHECKS PASSED.` A failed assertion or a nonzero exit
-status indicates failure.
-
-## Inspecting an identity
+The Lean version and mathlib revision are fixed by `lean-toolchain` and
+`lake-manifest.json`. With Lean installed through elan:
 
 ```sh
-python3 -B inspect_certificate.py --cone 2 --proof 2
-python3 -B inspect_certificate.py --cone 3 --proof 1 --all
+lake exe cache get
+LEAN_NUM_THREADS=1 lake build
 ```
 
-The inspection program expands one weighted square and checks one coefficient
-of the selected identity. `--all` displays every weighted square and remainder
-term. The full verification checks all coefficients and reconstructs the
-geometric inputs.
+The finite certificate files are part of the proof source and can require
+substantial time and memory to compile.
 
-## Relation to the proof
+## Main declarations
 
-The programs check the moment polynomials, six polynomial identities,
-and finite comparisons used in the proof. The accompanying manuscript gives
-the three-cone reduction, the integration formulas, the scalar inequalities,
-and the equality argument. The [review guide](REVIEWING.md) explains this
-division and identifies the functions and data used in each computation.
+- `D4.theoremA`: the Gram-matrix form of the four-dimensional optimality theorem.
+- `D4.Euclidean.geometricTheoremA`: optimality and equality for actual lattices.
+- `D4.FacetGeometry.theoremB`: the dimension-dependent lower bound.
+- `D4.FacetGeometry.theoremB_actual_facets`: the bound with the actual facet count.
+- `D4.geometricMomentIdentities`: the actual moment formulas on all three closed cones.
+- `D4.Delaunay.exactly_three_inclusion_maximal_secondary_domains`: the three secondary domains up to integral basis change.
+- `D4.C23Local.path2_outside_joint_analytic` and `path3_outside_joint_analytic`: joint analyticity of the actual outside integrals at the two walls.
+- `D4.FacetGeometry.subtractive_dither_independent`: the uniform and independent dither error.
+- `D4.Blocks.four_dimensional_block_equality`: the equality case for orthogonal D4 blocks.
 
-The repository contains the verification programs and data. The manuscript
-is distributed separately.
+## Earlier version
 
-## Citation
+The Python checks and computational data for the first version of the paper
+are preserved at the [v1 tag](https://github.com/tianle-liu/D4Quantization/tree/v1).
+They are not required by the second version or by this Lean formalization.
 
-If you use this code or these certificates in research that leads to a
-publication, please cite the accompanying paper:
+## Citation and license
 
-Tianle Liu. *The optimal four-dimensional lattice quantizer and bounds from
-Voronoi facets*. Preprint, 2026.
+Please cite Tianle Liu, *Optimality of the D4 Lattice Quantizer*,
+[arXiv:2611.00100v2](https://arxiv.org/abs/2611.00100v2), 2026.
+Citation metadata is provided in [CITATION.cff](CITATION.cff).
 
-Citation metadata is provided in [CITATION.cff](CITATION.cff). This citation
-request is not an additional condition of the MIT License.
-
-## License
-
-The verification code, certificates, and accompanying repository documentation
-are distributed under the [MIT License](LICENSE). The manuscript is distributed
-separately and is not covered by this license.
+The proof source and repository documentation are distributed under the
+[MIT License](LICENSE). The paper is distributed separately and is not covered
+by this license.

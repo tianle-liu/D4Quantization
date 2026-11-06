@@ -1,0 +1,37 @@
+import D4.C3CellGeometryVolume00
+import D4.C3CellGeometryVolume01
+import D4.C3CellGeometryVolume02
+import D4.C3CellGeometryVolume03
+import D4.C3CellGeometryVolume04
+import D4.C3CellGeometryVolume05
+import D4.C3CellGeometryVolume06
+import D4.C3CellGeometryVolume07
+import D4.C3CellGeometryVolume08
+import D4.C3CellGeometryVolume09
+import D4.C3CellGeometryVolume10
+import D4.C3CellGeometryVolume11
+import D4.C3CellGeometryVolume12
+import D4.C3CellGeometryVolume13
+import D4.C3CellGeometryVolume14
+import D4.C3CellGeometryVolume15
+import D4.C3CellGeometryVolume16
+import D4.C3CellGeometryVolume17
+import D4.C3CellGeometryVolume18
+import D4.C3CellGeometryVolume19
+import D4.C3CellGeometryVolume20
+import D4.C3CellGeometryVolume21
+import D4.C3CellGeometryVolume22
+import D4.C3CellGeometryVolume23
+import D4.C3CellGeometryVolume24
+import D4.C3CellGeometryVolume25
+import D4.C3CellGeometryVolume26
+import D4.C3CellGeometryVolume27
+import D4.C3CellGeometryVolume28
+import D4.C3CellGeometryVolume29
+import D4.CertificateMomentData
+set_option maxHeartbeats 0
+set_option maxRecDepth 1000000
+namespace D4.Secondary
+open Certificate
+theorem c3_geometry_volume_polynomial : sumFast [c3GeometryVolumePart0,c3GeometryVolumePart1,c3GeometryVolumePart2,c3GeometryVolumePart3,c3GeometryVolumePart4,c3GeometryVolumePart5,c3GeometryVolumePart6,c3GeometryVolumePart7,c3GeometryVolumePart8,c3GeometryVolumePart9,c3GeometryVolumePart10,c3GeometryVolumePart11,c3GeometryVolumePart12,c3GeometryVolumePart13,c3GeometryVolumePart14,c3GeometryVolumePart15,c3GeometryVolumePart16,c3GeometryVolumePart17,c3GeometryVolumePart18,c3GeometryVolumePart19,c3GeometryVolumePart20,c3GeometryVolumePart21,c3GeometryVolumePart22,c3GeometryVolumePart23,c3GeometryVolumePart24,c3GeometryVolumePart25,c3GeometryVolumePart26,c3GeometryVolumePart27,c3GeometryVolumePart28,c3GeometryVolumePart29] = scale 384 CertificateMoments.determinantC3 := by kernel_rfl
+end D4.Secondary

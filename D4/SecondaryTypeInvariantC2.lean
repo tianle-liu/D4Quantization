@@ -1,0 +1,14 @@
+import D4.SecondaryTypeInvariantFinite
+import D4.DelaunayData
+
+namespace D4.Delaunay
+set_option maxRecDepth 1000000
+set_option maxHeartbeats 1000000
+
+theorem cells2_finiteValenceCount_24 : finiteValenceCount cells2 24 = 4 := by
+  kernel_rfl
+
+theorem cells2_valenceCount_24 : valenceCount (periodicVertexFamily cells2) 24 = 4 := by
+  rw [valenceCount_eq_finiteValenceCount cells2 24 (by decide), cells2_finiteValenceCount_24]
+
+end D4.Delaunay

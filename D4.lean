@@ -1,0 +1,36 @@
+import D4.MainApplications
+import D4.SecondaryGraphMoment
+import D4.SecondaryMomentAnalytic
+import D4.PrincipalClosedTiling
+import D4.PrincipalCircuitRelations
+import D4.PrincipalLaplacianMatrixTree
+import D4.DelaunayTriangulations
+import D4.DelaunayFlipGeometry
+import D4.DelaunayInterpolant
+import D4.SecondaryTypeInvariant
+import D4.SecondaryDomainsMaximal
+import D4.C23OutsideAnalytic
+import D4.C23JointOutsideAnalytic
+import D4.C23WindowPeriodFinite
+import D4.AreaPolygonRepresentation
+import D4.MovingNearestSubdivision
+import D4.PaperFiniteStatistics
+import D4.PaperAppendixRows
+import D4.PaperOrbitAverage
+import D4.PaperHomogeneity
+import D4.ConeAnalysisHemisphere
+import D4.ConeAnalysisStrictFacet
+import D4.ConeAnalysisAsymptotics
+import D4.ConeAnalysisUnitDiagonal
+import D4.ConeAnalysisHexagonalIntegral
+import D4.ConeAnalysisD4Octahedron
+import D4.ConeAnalysisD4Numerical
+import D4.ConeAnalysisD4StrictBound
+import D4.LatticeInfimum
+import D4.LatticeSimilarityInvariant
+import D4.GramCubeFormula
+import D4.GramCubeMinimum
+import D4.DitherFacetBound
+import D4.ParityRoundingEuclidean
+
+/-! Formalization of the mathematical results in arXiv:2611.00100v2. -/

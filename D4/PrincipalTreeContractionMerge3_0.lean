@@ -1,0 +1,9 @@
+import D4.PrincipalTreeContractionMerge2_0
+import D4.PrincipalTreeContractionMerge0_4
+import D4.PrincipalTreeMomentProduct
+set_option maxHeartbeats 0
+set_option maxRecDepth 1000000
+namespace D4.Principal
+open Certificate
+theorem principalTreeContractionMerge3_0_check : mergeAdd principalTreeContractionMerge2_0 principalTreeContractionMerge0_4 = treeMomentProduct := by kernel_rfl
+end D4.Principal
